@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chris Tampubolon - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Glyphic+Sans:wght@300;400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #2a1a0f;
+            background-image: linear-gradient(to bottom, rgba(42, 26, 15, 0.9), rgba(58, 38, 24, 0.9)), url('background1.gif');
+            background-size: cover;
+            background-attachment: fixed;
+            color: #f5deb3;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        .page-container {
+            width: 100%;
+            max-width: 1600px;
+            padding: 0 100px;
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Decorative corner GIFs placed outside the main content - BORDER REMOVED */
+        .corner-gif {
+            position: fixed;
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            opacity: 0.85;
+            z-index: 0;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+            /* Border removed as requested */
+        }
+
+        /* Positioned exactly at the bottom */
+        .gif-left {
+            bottom: 0;
+            left: 40px;
+        }
+
+        .gif-right {
+            bottom: 0;
+            right: 40px;
+        }
+
+        .portfolio-container {
+            width: 100%;
+            background-color: rgba(58, 38, 24, 0.92);
+            border-radius: 25px;
+            padding: 50px 60px;
+            margin: 50px 0;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+            position: relative;
+            z-index: 1;
+            border: 1px solid #6b4c32;
+            max-width: 1400px;
+        }
+
+        /* Section common styles */
+        section {
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-family: 'Glyphic Sans', sans-serif;
+            font-size: 3rem;
+            color: #d7b899;
+            margin-bottom: 40px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #8b5a2b;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-align: center;
+        }
+
+        /* Profile Section */
+        .profile-section {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            gap: 50px;
+        }
+
+        .profile-pic-container {
+            flex: 0 0 280px;
+        }
+
+        .profile-pic {
+            width: 100%;
+            border-radius: 20px;
+            border: 6px solid #8b5a2b;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .profile-info {
+            flex: 1;
+            min-width: 350px;
+        }
+
+        .profile-name {
+            font-size: 3.2rem;
+            color: #f5deb3;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .profile-title {
+            font-size: 1.8rem;
+            color: #d7b899;
+            margin-bottom: 25px;
+            font-weight: 500;
+        }
+
+        .universities-list {
+            margin: 25px 0;
+            padding-left: 25px;
+        }
+
+        .universities-list li {
+            margin-bottom: 12px;
+            font-size: 1.2rem;
+            color: #e6ccb2;
+            position: relative;
+        }
+
+        .universities-list li:before {
+            content: "▸";
+            color: #d7b899;
+            position: absolute;
+            left: -20px;
+        }
+
+        .profile-bio {
+            font-size: 1.2rem;
+            margin: 30px 0;
+            color: #f0e6d6;
+            line-height: 1.8;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 35px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.15rem;
+            color: #e6ccb2;
+            background-color: rgba(91, 60, 37, 0.5);
+            padding: 12px 20px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background-color: rgba(139, 90, 43, 0.7);
+            transform: translateY(-5px);
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            color: #d7b899;
+        }
+
+        /* Projects Section - Updated without screenshots or GitHub links */
+        .project-item {
+            margin-bottom: 60px;
+            padding: 30px;
+            background-color: rgba(91, 60, 37, 0.4);
+            border-radius: 20px;
+            border-left: 8px solid #8b5a2b;
+            transition: transform 0.3s ease;
+        }
+
+        .project-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-title {
+            font-family: 'Glyphic Sans', sans-serif;
+            font-size: 2.2rem;
+            color: #d7b899;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .project-description {
+            font-size: 1.2rem;
+            color: #f0e6d6;
+            line-height: 1.8;
+        }
+
+        /* Project tech tags */
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0 20px 0;
+        }
+
+        .tech-tag {
+            background-color: rgba(139, 90, 43, 0.3);
+            color: #d7b899;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Certificates Section */
+        .certificates-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: center;
+        }
+
+        .certificate-item {
+            flex: 0 1 500px;
+            text-align: center;
+            background-color: rgba(91, 60, 37, 0.4);
+            padding: 30px;
+            border-radius: 20px;
+            border-top: 8px solid #8b5a2b;
+            transition: transform 0.3s ease;
+        }
+
+        .certificate-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .certificate-title {
+            font-size: 1.6rem;
+            color: #f5deb3;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .certificate-image {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 15px;
+            border: 4px solid #8b5a2b;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 1400px) {
+            .page-container {
+                padding: 0 50px;
+            }
+            
+            .portfolio-container {
+                padding: 40px 50px;
+            }
+            
+            .corner-gif {
+                width: 180px;
+                height: 180px;
+            }
+            
+            .gif-left {
+                left: 30px;
+            }
+            
+            .gif-right {
+                right: 30px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .page-container {
+                padding: 0 30px;
+            }
+            
+            .portfolio-container {
+                padding: 35px 40px;
+            }
+            
+            .profile-name {
+                font-size: 2.8rem;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .corner-gif {
+                width: 160px;
+                height: 160px;
+                opacity: 0.7;
+            }
+            
+            .gif-left {
+                left: 20px;
+            }
+            
+            .gif-right {
+                right: 20px;
+            }
+            
+            .certificate-item {
+                flex: 1 1 400px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .corner-gif {
+                width: 140px;
+                height: 140px;
+            }
+            
+            .gif-left {
+                left: 15px;
+            }
+            
+            .gif-right {
+                right: 15px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page-container {
+                padding: 0 20px;
+            }
+            
+            .portfolio-container {
+                padding: 30px;
+                margin: 30px 0;
+            }
+            
+            .profile-section {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 30px;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .profile-name {
+                font-size: 2.4rem;
+            }
+            
+            .profile-title {
+                font-size: 1.5rem;
+            }
+            
+            .corner-gif {
+                width: 120px;
+                height: 120px;
+                opacity: 0.6;
+            }
+            
+            .contact-info {
+                justify-content: center;
+            }
+            
+            .profile-info {
+                min-width: unset;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .page-container {
+                padding: 0 15px;
+            }
+            
+            .portfolio-container {
+                padding: 25px 20px;
+                border-radius: 20px;
+            }
+            
+            .corner-gif {
+                display: none;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+            
+            .contact-item {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .certificate-item {
+                flex: 1 1 100%;
+            }
+        }
+
+        /* Additional text enhancements */
+        .highlight {
+            color: #d7b899;
+            font-weight: 700;
+        }
+
+        .pronouns {
+            font-size: 1.4rem;
+            color: #c9a87a;
+            margin-left: 10px;
+        }
+
+        /* Page header */
+        .page-header {
+            text-align: center;
+            margin-top: 40px;
+            z-index: 1;
+        }
+
+        .page-header h1 {
+            font-family: 'Glyphic Sans', sans-serif;
+            font-size: 3.5rem;
+            color: #d7b899;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <!-- Decorative corner GIFs outside the main content - NO BORDERS -->
+        <img src="gif1.gif" alt="Decorative GIF 1" class="corner-gif gif-left">
+        <img src="gif2.gif" alt="Decorative GIF 2" class="corner-gif gif-right">
+        
+        <!-- Page Header -->
+        <div class="page-header">
+            <h1>PORTFOLIO</h1>
+        </div>
+        
+        <!-- Main Portfolio Content -->
+        <div class="portfolio-container">
+            <!-- Section 1: Profile -->
+            <section id="profile">
+                <div class="profile-section">
+                    <div class="profile-pic-container">
+                        <img src="profilepic.png" alt="Chris Tampubolon" class="profile-pic">
+                    </div>
+                    <div class="profile-info">
+                        <h1 class="profile-name">Chris Tampubolon <span class="pronouns">(he/him)</span></h1>
+                        <h2 class="profile-title">Double Degree Computer Science Undergraduate</h2>
+                        
+                        <p class="profile-bio">
+                            Hello, I'm <span class="highlight">Christian Antonio Yotanka Tampubolon</span>, but you can call me <span class="highlight">Chris</span>! 
+                            I'm currently a double degree university student at BINUS University International and The University of Wollongong, 
+                            about to enter my 6th semester. I'm passionate about learning new things as I progress through my career. I am currently focused on <span class="highlight">machine learning</span> and 
+                            <span class="highlight">artificial intelligence</span>. I just hope that I get to grow as a person and advance myself through my education and experiences.
+                        </p>
+                        
+                        <p><strong>Currently pursuing a double degree at:</strong></p>
+                        <ul class="universities-list">
+                            <li>BINUS Univeristy International, Jakarta, Indonesia (est grad. 2027)</li>
+                            <li>University of Wollongong, NSW, Australia (est grad. 2027)</li>
+                        </ul>
+                        
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fas fa-phone-alt contact-icon"></i>
+                                <span>+62 81229169194</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-envelope contact-icon"></i>
+                                <span>itschristampubolonyt@gmail.com</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fab fa-linkedin contact-icon"></i>
+                                <span>linkedin.com/in/chris-tampubolon-62098939a/</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fab fa-github contact-icon"></i>
+                                <span>github.com/acetide</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Section 2: Projects -->
+            <section id="projects">
+                <h2 class="section-title">PROJECTS</h2>
+                
+                <div class="project-item">
+                    <h3 class="project-title">Shipping Port Distance Calculator</h3>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Dijkstra's Algorithm</span>
+                    </div>
+                    <p class="project-description">
+                        This project is an implementation of <span class="highlight">Dijkstra's algorithm</span> used to calculate the most efficient routes between several seaports. This simulation was also intended to compare Djiksta's algorithm to the Greedy algorithm, which proves that Djikstra has the better efficiency.
+                    </p>
+                </div>
+                
+                <div class="project-item">
+                    <h3 class="project-title">Bullet Penetration Depth Simulator</h3>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Physics Simulation</span>
+                        <span class="tech-tag">Mathematical Analysis</span>
+    
+                    </div>
+                    <p class="project-description">
+                        This physics simulation is created to calculate bullet depth if shot through various materials, which accounts for external variables like gun velocity, distance, and ammunition type. The simulation also includes pre-established components such a 9mm bullets, as well as different materials such as carbin fiber. This project helped me understand the implementations of computational physics.
+                    </p>
+                </div>
+                
+                <div class="project-item">
+                    <h3 class="project-title">AI Pancreatic Cancer Detector</h3>
+                    <div class="project-tech">
+                        <span class="tech-tag">TensorFlow</span>
+                        <span class="tech-tag">CNN</span>
+                        <span class="tech-tag">Keras</span>
+                        <span class="tech-tag">Machine Learning</span>
+                    </div>
+                    <p class="project-description">
+                        This pancreatic cancer identifier is a medical diagnostic tool using <span class="highlight">Convolutional Neural Networks (CNN)</span> with sigmoid activation. Here, there are two classes implemented, and with sigmoid activation, these classes are divided inro 0 and 1, cancerous and healthy. Decision making is determined by whether the sigmoid activation value is lesser or greater than 0.5. functions to detect pancreatic cancer from CT Scans. This project is a project that helped meexplore the applications of machine learning.
+                    </p>
+                </div>
+                
+                <div class="project-item">
+                    <h3 class="project-title">CS:GO Match Outcome Predictor</h3>
+                    <div class="project-tech">
+                        <span class="tech-tag">Data Analysis</span>
+                        <span class="tech-tag">Data Science</span>
+                    </div>
+                    <p class="project-description">
+                        My team conducted data research on Counter-Strike: Global Offensive by analyzing historical match data to predict outcomes. The paper was <span class="highlight">published in ISRITI</span>. This project honed my skills in data preprocessing and helped me improve My machine learning skills.
+                    </p>
+                </div>
+            </section>
+            
+            <!-- Section 3: Certificates -->
+            <section id="certificates">
+                <h2 class="section-title">Certifications</h2>
+                <div class="certificates-container">
+                    <div class="certificate-item">
+                        <h3 class="certificate-title">Google Colab Great Learning Certificate</h3>
+                        <img src="certificate1.jpg" alt="Google Colab Great Learning Certificate" class="certificate-image">
+                    </div>
+                    <div class="certificate-item">
+                        <h3 class="certificate-title">AWS Academy Graduate: Generative AI Foundations</h3>
+                        <img src="certificate2.jpg" alt="AWS Academy Graduate - Generative AI Foundations" class="certificate-image">
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+</html>
