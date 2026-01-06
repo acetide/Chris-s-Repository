@@ -186,7 +186,7 @@
             color: #d7b899;
         }
 
-        /* Projects Section - Updated without screenshots or GitHub links */
+        /* Projects Section - Updated with GitHub links */
         .project-item {
             margin-bottom: 60px;
             padding: 30px;
@@ -212,6 +212,7 @@
             font-size: 1.2rem;
             color: #f0e6d6;
             line-height: 1.8;
+            margin-bottom: 20px;
         }
 
         /* Project tech tags */
@@ -229,6 +230,31 @@
             border-radius: 20px;
             font-size: 0.9rem;
             font-weight: 500;
+        }
+
+        /* GitHub link styles */
+        .github-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: rgba(139, 90, 43, 0.5);
+            color: #d7b899;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 1px solid #8b5a2b;
+        }
+
+        .github-link:hover {
+            background-color: rgba(139, 90, 43, 0.8);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .github-icon {
+            font-size: 1.2rem;
         }
 
         /* Certificates Section */
@@ -520,6 +546,10 @@
                     <p class="project-description">
                         This project is an implementation of <span class="highlight">Dijkstra's algorithm</span> used to calculate the most efficient routes between several seaports. This simulation was also intended to compare Djiksta's algorithm to the Greedy algorithm, which proves that Djikstra has the better efficiency.
                     </p>
+                    <a href="https://github.com/acetide/ada" class="github-link" target="_blank">
+                        <i class="fab fa-github github-icon"></i>
+                        View on GitHub
+                    </a>
                 </div>
                 
                 <div class="project-item">
@@ -528,11 +558,14 @@
                         <span class="tech-tag">Python</span>
                         <span class="tech-tag">Physics Simulation</span>
                         <span class="tech-tag">Mathematical Analysis</span>
-    
                     </div>
                     <p class="project-description">
                         This physics simulation is created to calculate bullet depth if shot through various materials, which accounts for external variables like gun velocity, distance, and ammunition type. The simulation also includes pre-established components such a 9mm bullets, as well as different materials such as carbin fiber. This project helped me understand the implementations of computational physics.
                     </p>
+                    <a href="https://github.com/acetide/ComputationalPhysicsFINAL" class="github-link" target="_blank">
+                        <i class="fab fa-github github-icon"></i>
+                        View on GitHub
+                    </a>
                 </div>
                 
                 <div class="project-item">
@@ -544,20 +577,50 @@
                         <span class="tech-tag">Machine Learning</span>
                     </div>
                     <p class="project-description">
-                        This pancreatic cancer identifier is a medical diagnostic tool using <span class="highlight">Convolutional Neural Networks (CNN)</span> with sigmoid activation. Here, there are two classes implemented, and with sigmoid activation, these classes are divided inro 0 and 1, cancerous and healthy. Decision making is determined by whether the sigmoid activation value is lesser or greater than 0.5. functions to detect pancreatic cancer from CT Scans. This project is a project that helped meexplore the applications of machine learning.
+                        This pancreatic cancer detector is a medical diagnostic tool using <span class="highlight">Convolutional Neural Networks (CNN)</span> with sigmoid activation. Here, there are two classes implemented, and with sigmoid activation, these classes are divided inro 0 and 1, cancerous and healthy. Decision making is determined by whether the sigmoid activation value is lesser or greater than 0.5. functions to detect pancreatic cancer from CT Scans. This project is a project that helped meexplore the applications of machine learning.
                     </p>
+                    <a href="https://drive.google.com/drive/folders/1Bai5Q66fmpVSz6YX926WFrO4fzau3Frg?usp=sharing" class="github-link" target="_blank">
+                        <i class="fab fa-github github-icon"></i>
+                        View on GitHub
+                    </a>
+
+
+                </div>
+
+                <div class="project-item">
+                    <h3 class="project-title">AI Pancreatic Cancer Detector</h3>
+                    <div class="project-tech">
+                        <span class="tech-tag">TensorFlow</span>
+                        <span class="tech-tag">CNN</span>
+                        <span class="tech-tag">Keras</span>
+                        <span class="tech-tag">Machine Learning</span>
+                    </div>
+                    <p class="project-description">
+                        This pancreatic cancer identifier is the extension of the afformentioned project. It detects whether a pancreatic cancer CT is neuroendocrine cancer or exocrine cancer 
+                    </p>
+                    <a href="https://github.com/acetide/pancreatic_cancer_identifier" class="github-link" target="_blank">
+                        <i class="fab fa-github github-icon"></i>
+                        View on GitHub
+                    </a>
+
+                    
                 </div>
                 
                 <div class="project-item">
-                    <h3 class="project-title">CS:GO Match Outcome Predictor</h3>
-                    <div class="project-tech">
-                        <span class="tech-tag">Data Analysis</span>
-                        <span class="tech-tag">Data Science</span>
-                    </div>
-                    <p class="project-description">
-                        My team conducted data research on Counter-Strike: Global Offensive by analyzing historical match data to predict outcomes. The paper was <span class="highlight">published in ISRITI</span>. This project honed my skills in data preprocessing and helped me improve My machine learning skills.
+                <h3 class="project-title">CS:GO Match Outcome Predictor</h3>
+                <div class="project-tech">
+                <span class="tech-tag">Data Analysis</span>
+                <span class="tech-tag">Data Science</span>
+                  </div>
+                   <p class="project-description">
+                         My team conducted data research on Counter-Strike: Global Offensive by analyzing historical match data to predict outcomes. The paper was <span class="highlight">published in ISRITI</span>. This project honed my skills in data preprocessing and helped me improve my machine learning skills.
                     </p>
-                </div>
+                 <a href="B3_counterstrike_isriti.pdf" class="download-link" download>
+                 <i class="fas fa-file-pdf"></i>
+                 Download Paper
+                    </a>
+</div>
+
             </section>
             
             <!-- Section 3: Certificates -->
